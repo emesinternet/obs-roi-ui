@@ -60,7 +60,7 @@ contains the Windows x64 installer and ZIP package. GitHub also provides
 source code ZIP and tar archives for every tagged release.
 
 <!-- current-release:start -->
-The current release is **1.1.2.3322** for OBS Studio 32.2.2. Install the
+The current release is **1.1.2.3222** for OBS Studio 32.2.2. Install the
 package while OBS is closed.
 <!-- current-release:end -->
 
@@ -72,26 +72,6 @@ The project uses CMake. On Windows, use the **windows-x64** preset:
 cmake --preset windows-x64
 cmake --build --preset windows-x64
 ```
-
-See [the application documentation](docs/application.md) for all settings
-and [the update report](docs/update-report.md) for the OBS 32.2.2 changes.
-
-## Compatibility automation
-
-The Codex automation named `OBS ROI weekly compatibility check` checks the OBS
-release feed every Sunday at 04:00 UTC. It runs in Codex on the configured
-Windows workspace. It builds and runs the plugin with a clean Windows OBS
-runtime before it changes the repository.
-
-When the check passes, the task updates the OBS source pin and the badge
-above. It does not create a release. When the check fails, it opens an issue.
-The Codex task may make only the source and build changes needed for that OBS
-version. The same repository build and packaging scripts then create and
-verify the installer and ZIP before the task publishes a new release.
-
-The repository scripts create the final files. GitHub Actions only publish
-files created by the repository scripts when a release tag is pushed. The
-scheduled check and any repair work happen in Codex.
 
 ## License
 

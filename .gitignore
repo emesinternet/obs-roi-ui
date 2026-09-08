@@ -7,7 +7,7 @@
 !/cmake
 !/data
 !/src
-!/docs
+/docs/
 !/repo
 !/CHANGELOG.md
 !.clang-format
