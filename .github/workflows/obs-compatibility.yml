@@ -363,7 +363,7 @@ jobs:
         shell: pwsh
         run: |
           $allowed = @('buildspec.json', 'CMakeLists.txt', 'CMakePresets.json')
-          $changed = @(git diff --name-only)
+          $changed = @(git diff --name-only; git ls-files --others --exclude-standard)
           $disallowed = @($changed | Where-Object {
             ($_ -notin $allowed) -and ($_ -notmatch '^(src|cmake)/')
           })
