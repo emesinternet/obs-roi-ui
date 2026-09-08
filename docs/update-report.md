@@ -52,6 +52,8 @@ were not needed for this Windows fix, so they were not copied.
   This prevents callbacks into a destroyed preview widget.
 - Removed two unused CMake version assignments made obsolete by the new OBS
   configure command.
+- Made Windows installer staging cleanup run before and after compilation, so
+  a failed installer build cannot contaminate a later package retry.
 
 No new architecture, compatibility layer, fallback FFmpeg loading, or
 performance change was added.
@@ -103,3 +105,17 @@ performance code changed.
 The built Windows package is staged by CMake at `validation/install-new` during
 verification. It contains `obs-roi-ui.dll`, its PDB, and the locale resource
 under the normal OBS plugin paths.
+
+## Published release
+
+The [1.1.2.3322 release](https://github.com/emesinternet/obs-roi-ui/releases/tag/1.1.2.3322)
+is published as a non-draft release. Its custom assets are:
+
+- `obs-roi-ui-1.1.2.3322-windows-x64-Installer.exe`, SHA-256
+  `e5ef5a3e0dc3163b0b4e9fd7d11f4e0d88ac0384f3992e2092fade7a5a927837`.
+- `obs-roi-ui-1.1.2.3322-windows-x64.zip`, SHA-256
+  `735bc94f1ddfbc14f46b14ebe7715ecb19725563e9f3fb94c9198aeef254942e`.
+
+GitHub provides the source-code ZIP and tar archive for the release tag. The
+published ZIP was installed into a fresh portable OBS 32.2.2 directory and
+passed the same module, output, source, and version checks listed above.
