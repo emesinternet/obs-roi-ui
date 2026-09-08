@@ -78,21 +78,20 @@ and [the update report](docs/update-report.md) for the OBS 32.2.2 changes.
 
 ## Compatibility automation
 
-The `OBS compatibility` workflow checks the OBS release feed every Sunday at
-04:00 UTC. It builds and runs the plugin with a clean Windows OBS runtime
-before it changes the repository.
+The Codex automation named `OBS ROI weekly compatibility check` checks the OBS
+release feed every Sunday at 04:00 UTC. It runs in Codex on the configured
+Windows workspace. It builds and runs the plugin with a clean Windows OBS
+runtime before it changes the repository.
 
-When the check passes, the workflow updates the OBS source pin and the badge
+When the check passes, the task updates the OBS source pin and the badge
 above. It does not create a release. When the check fails, it opens an issue.
-If the repository has an `OPENAI_API_KEY` secret, a constrained repair step
-may make only the source and build changes needed for that OBS version. The
-same repository build and packaging scripts then create and verify the
-installer and ZIP before the workflow publishes a new release.
+The Codex task may make only the source and build changes needed for that OBS
+version. The same repository build and packaging scripts then create and
+verify the installer and ZIP before the task publishes a new release.
 
-The repository scripts create the final files. Actions provide scheduling,
-verification, artifact transfer, and release publishing. The repair step is
-the only exception because a future OBS API change cannot be fixed by a
-deterministic publishing step.
+The repository scripts create the final files. GitHub Actions only publish
+files created by the repository scripts when a release tag is pushed. The
+scheduled check and any repair work happen in Codex.
 
 ## License
 
