@@ -3,7 +3,7 @@
 This fork is based on the [original OBS ROI / Encoder Output Preview repository](https://github.com/derrod/obs-roi-ui). I intend to keep it up to date with current OBS releases.
 
 <!-- obs-compatibility-badge:start -->
-[![OBS Studio compatibility](https://img.shields.io/badge/OBS_Studio-32.2.2_compatible-brightgreen)](https://github.com/obsproject/obs-studio/releases/tag/32.2.2)
+[![OBS Studio compatibility](https://img.shields.io/badge/OBS_Studio-33.0.0_compatible-brightgreen)](https://github.com/obsproject/obs-studio/releases/tag/33.0.0)
 <!-- obs-compatibility-badge:end -->
 
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](LICENSE)
